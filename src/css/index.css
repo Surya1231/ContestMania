@@ -1,0 +1,156 @@
+html,
+body {
+  margin: 0px;
+}
+
+body {
+  padding-top: 60px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  background-color: #f8f9fa;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.sidebar {
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    width: inherit;
+    max-width: inherit;
+    max-height: 96vh;
+    overflow-y: auto;
+  }
+
+  .sidebar::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+.content-box {
+  min-height: 90vh;
+}
+
+.loader {
+  position: relative;
+  width: inherit;
+  max-width: inherit;
+  top: 30%;
+}
+
+.custom-toolkit {
+  border-radius: 100px !important;
+}
+
+*:focus,
+*:active {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+/* Navigation bar */
+
+#navbar {
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  background-color: #173b5c;
+  background-image: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  z-index: 1060;
+  min-height: 60px;
+  box-sizing: border-box;
+}
+
+#navbar .navbar {
+  font-size: large;
+}
+
+#navbar .navbar-brand {
+  font-weight: bold;
+  font-size: larger;
+  margin-right: 1rem;
+}
+
+#navbar .active {
+  color: white;
+  font-weight: 400;
+}
+
+/* codeforces */
+
+#cf-table {
+  overflow-x: auto;
+  min-height: 90vh;
+}
+
+#cf-table th {
+  background-color: #173b5c;
+}
+
+#cf-table .bg-solved {
+  background-color: #21d4fd;
+  background-image: linear-gradient(270deg, #21a2fd 0%, #b721ff 100%);
+}
+
+#cf-table .bg-unsolved {
+  background-color: #dc3545;
+  background: -webkit-linear-gradient(to left, #f58e19, #f12711);
+  background: linear-gradient(to left, #f58e19, #f12711);
+}
+
+#cf-table .bg-completed {
+  background-color: green;
+  background: #00b09b;
+  background: -webkit-linear-gradient(to left, #237e2a, #00b09b);
+  background: linear-gradient(to left, #237e2a, #00b09b);
+}
+
+.bg-solved a,
+.bg-unsolved a,
+.bg-completed a {
+  color: white !important;
+}
+
+/* Problems Table */
+
+#problems-table {
+  overflow-x: auto;
+  min-height: 90vh;
+}
+
+#problems-table {
+  border-radius: 8px;
+}
+
+#problems-table .problem-solved .list-group-item {
+  background-color: rgb(182, 243, 243);
+}
+
+#problems-table .problem-solved .list-group-item.active {
+  background-color: #173b5c;
+}
+
+#problems-table .list-group-item.active {
+  background-color: #173b5c;
+  border-color: #173b5c;
+}
+
+.problems-inner-table {
+  font-size: small;
+}
+
+.upcoming-content {
+  overflow-x: auto;
+}
+
+#upcoming-table th {
+  background-color: #173b5c;
+}
+
+.upcoming-logo {
+  height: 25px;
+  width: 25px;
+}
