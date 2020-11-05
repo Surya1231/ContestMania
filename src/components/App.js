@@ -5,6 +5,7 @@ import About from './About/About';
 import Codeforces from './Codeforces/Codeforces';
 import { FullScreenError } from './Common/Common';
 import Navbar from './Navbar/Navbar';
+import News from './News/News';
 import Problems from './Problems/Problems';
 import Upcoming from './Upcoming/Upcoming';
 
@@ -33,6 +34,7 @@ class App extends React.Component {
           <Route exact path="/problems" component={Problems} />
           <Route exact path="/upcoming" component={Upcoming} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/news" component={News} />
           <Route component={FullScreenError} />
         </Switch>
       </div>
