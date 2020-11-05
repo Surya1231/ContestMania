@@ -1,6 +1,8 @@
 import { globalSolutions } from '../../api/data/cfProblemsSolutions';
+import { problemsCategories } from '../../api/data/ProblemsData';
 
 const LOCAL_PROBLEMS_FILTERS = 'LOCAL_PROBLEMS_FILTERS';
+const LOCAL_PROBLEMS = 'LOCAL_PROBLEMS';
 
 const UPDATE_PROBLEMS_FILTERS = 'UPDATE_PROBLEMS_FILTERS';
 const UPDATE_PROBLEMS = 'UPDATE_PROBLEMS';
@@ -20,9 +22,9 @@ export const updateProblemsAction = (problems) => {
 };
 
 const initialState = {
-  problems: [],
+  problems: JSON.parse(localStorage.getItem(LOCAL_PROBLEMS) || '[]'),
   filters: JSON.parse(localStorage.getItem(LOCAL_PROBLEMS_FILTERS) || '{}'),
-  categories: [],
+  categories: problemsCategories,
   globalSolutions,
 };
 
@@ -36,6 +38,7 @@ export const ProblemsReducer = (state = initialState, action) => {
         tags.forEach((tag) => categories.add(tag));
       });
       categories = [...categories].sort();
+      localStorage.setItem(LOCAL_PROBLEMS, JSON.stringify(problems));
       return { ...state, problems, categories };
     }
 

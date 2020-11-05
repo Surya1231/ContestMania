@@ -7,7 +7,9 @@ function News() {
       {newsData.map((news) => (
         <div key={news.id} className="alert alert-info">
           {news.news}
-          <span className="float-right">{news.date}</span>
+          <div className="clearfix">
+            <span className="float-right text-muted">{news.date}</span>
+          </div>
         </div>
       ))}
     </div>

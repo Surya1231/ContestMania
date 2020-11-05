@@ -52,8 +52,8 @@ class Upcoming extends Component {
     return (
       <div id="upcoming">
         <div className="row mx-0">
-          <div className="col-lg-2 col-md-3 py-3">
-            <div className="sidebar px-2" style={{ fontSize: '1rem' }}>
+          <div className="col-lg-2 col-md-3 py-3 px-0">
+            <div className="sidebar px-3" style={{ fontSize: '1rem' }}>
               {Object.keys(categories).map((category) => (
                 <div key={category} className="form-group form-check">
                   <input
@@ -66,6 +66,7 @@ class Upcoming extends Component {
                   <label className="form-check-label">{categories[category].name}</label>
                 </div>
               ))}
+              <hr />
             </div>
           </div>
 

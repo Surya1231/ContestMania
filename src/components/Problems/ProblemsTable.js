@@ -2,11 +2,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { globalSolutionUsers } from '../../api/data/solutionsCreator';
-import { TooltipBox } from '../Common/Common';
 
 const QuestionLimit = 1000;
-const questionLimitMessage = `There is limit of displayin ${QuestionLimit} questions per time for smooth functioning.
- You can adjust filters to get more question. Questions are sorted Rating wise`;
 
 const ProblemsTable = (props) => {
   const { userData, globalSolutions } = props;

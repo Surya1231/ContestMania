@@ -24,7 +24,6 @@ class App extends React.Component {
   render() {
     const { location } = this.props;
     const { pathname } = location;
-
     return (
       <div>
         <Navbar pathname={pathname} s />
