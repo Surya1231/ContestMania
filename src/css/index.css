@@ -45,8 +45,10 @@ body {
   border-radius: 100px !important;
 }
 
-*:focus,
-*:active {
+.btn:focus,
+.btn:active,
+.form-control:focus,
+.form-control:active {
   box-shadow: none !important;
   outline: 0px !important;
 }
