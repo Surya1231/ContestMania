@@ -1,4 +1,3 @@
-/* eslint-disable  */
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import About from './About/About';
@@ -21,7 +20,7 @@ class App extends React.Component {
 
   componentDidMount() {
     // buildGlobalSolutionData();
-    //getCodeChefContestList();
+    // getCodeChefContestList();
   }
 
   render() {

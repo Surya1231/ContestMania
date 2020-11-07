@@ -11,7 +11,7 @@ import { FullScreenError, LoadingFadeIn } from '../Common/Common';
 const applicableFilters = ['category', 'search', 'filter'];
 const localFilters = ['category'];
 
-export class Codeforces extends Component {
+class Codeforces extends Component {
   constructor(props) {
     super(props);
 

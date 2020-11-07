@@ -1,7 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-await-in-loop */
-/* eslint-disable react/no-unused-state */
+/* eslint-disable */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCfUserInfo } from '../../api/cfApi';
