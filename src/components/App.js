@@ -8,8 +8,10 @@ import Navbar from './Navbar/Navbar';
 import News from './News/News';
 import Problems from './Problems/Problems';
 import Upcoming from './Upcoming/Upcoming';
+import CodeChef from './CodeChef/CodeChef';
 
 // import { buildGlobalSolutionData } from '../api/data/solutionsCreator';
+// import { getCodeChefContestList } from '../api/ccApi';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class App extends React.Component {
 
   componentDidMount() {
     // buildGlobalSolutionData();
+    //getCodeChefContestList();
   }
 
   render() {
@@ -31,6 +34,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Codeforces} />
           <Route exact path="/problems" component={Problems} />
+          <Route exact path="/codechef" component={CodeChef} />
           <Route exact path="/upcoming" component={Upcoming} />
           <Route exact path="/about" component={About} />
           <Route exact path="/news" component={News} />

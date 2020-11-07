@@ -34,3 +34,20 @@ export const buildGlobalSolutionData = async () => {
   }
   console.log(JSON.stringify(globalSolutionData));
 };
+
+// function htmlResponse(url) {
+//   fetch(url, { mode: 'no-cors' })
+//     .then((res) => {
+//       console.log('Raw Result', res);
+//       return res.text();
+//     })
+//       .then((res) => {
+//         console.log('Text Results', res);
+//       })
+//       .catch((err) => {
+//         console.log('Text Conversion error ', err);
+//       })
+//     .catch((err) => {
+//       console.log('Fetch Error ', err);
+//     });
+// }

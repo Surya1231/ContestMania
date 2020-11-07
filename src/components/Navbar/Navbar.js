@@ -28,6 +28,11 @@ const Navbar = ({ pathname }) => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link className={`nav-link ${pathname === '/codechef' ? 'active' : ''}`} to="/codechef">
+                CodeChef
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className={`nav-link ${pathname === '/problems' ? 'active' : ''}`} to="/problems">
                 Problems
               </Link>

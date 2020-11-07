@@ -116,6 +116,17 @@ body {
   color: white !important;
 }
 
+/* Codechef */
+
+#cc-container {
+  overflow-x: auto;
+  min-height: 90vh;
+}
+
+#cc-table th {
+  background-color: #173b5c;
+}
+
 /* Problems Table */
 
 #problems-table {
@@ -140,9 +151,11 @@ body {
   border-color: #173b5c;
 }
 
-.problems-inner-table {
+#problems-table .problems-inner-table {
   font-size: small;
 }
+
+/* Upcoming */
 
 .upcoming-content {
   overflow-x: auto;

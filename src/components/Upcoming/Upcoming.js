@@ -1,6 +1,8 @@
 /* eslint-disable  */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { getUpcomingContest } from '../../api/clListApi';
+import { updateUpcomingContestAction } from '../../store/reducers/UpcomingReducer';
 import { FullScreenError, LoadingFadeIn } from '../Common/Common';
 import UpcomingTable from './UpcomingTable';
 
@@ -19,7 +21,6 @@ class Upcoming extends Component {
       },
       loading: false,
       error: '',
-      contestList: [],
     };
   }
 
@@ -28,14 +29,18 @@ class Upcoming extends Component {
   }
 
   updateContestList = async () => {
-    this.setState({ loading: true, error: '' });
+    const { contestList } = this.props;
+    if (!contestList.length) this.setState({ loading: true, error: '' });
+
     const { categories } = this.state;
     const categoryIdList = Object.keys(categories);
-    const contestList = await getUpcomingContest(categoryIdList);
+    const newContestList = await getUpcomingContest(categoryIdList);
     this.setState({ loading: false });
-    if (!contestList.length) this.setState({ error: 'Something went wrong on our side.' });
+
+    if (!contestList.length && !newContestList.length) this.setState({ error: 'Something went wrong on our side.' });
     else {
-      this.setState({ contestList });
+      const { updateUpcomingContestList } = this.props;
+      updateUpcomingContestList(newContestList);
     }
   };
 
@@ -47,7 +52,8 @@ class Upcoming extends Component {
   };
 
   render() {
-    const { categories, contestList } = this.state;
+    const { categories } = this.state;
+    const { contestList } = this.props;
     const { loading, error } = this.state;
     return (
       <div id="upcoming">
@@ -81,4 +87,12 @@ class Upcoming extends Component {
   }
 }
 
-export default Upcoming;
+const mapStateToProps = (state) => ({
+  contestList: (state.upcoming && state.upcoming.contestList) || [],
+});
+
+const mapDispatchToProps = (disptach) => ({
+  updateUpcomingContestList: (contestList) => disptach(updateUpcomingContestAction(contestList)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Upcoming);
