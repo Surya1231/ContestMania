@@ -3,7 +3,8 @@ import React from 'react';
 function CCTable(props) {
   const { search, category, contestList } = props;
   const categoryLowerCase = category.toLowerCase();
-  let index = 1;
+  const gapBetweenDates = category === 'Challenge' ? 10 : '';
+  let index = 0;
   return (
     <div id="cc-container">
       <div className="row mx-0 py-3">
@@ -22,8 +23,13 @@ function CCTable(props) {
             <tbody>
               {contestList.map((contest) => {
                 const { code, name, link, startTime, endTime, phase } = contest;
+                const gap = endTime.substr(0, 2) - startTime.substr(0, 2);
                 const searchString = [code, name].join('#');
-                if (searchString.indexOf(search) !== -1 && name.toLowerCase().indexOf(categoryLowerCase) !== -1) {
+                if (
+                  searchString.indexOf(search) !== -1 &&
+                  name.toLowerCase().indexOf(categoryLowerCase) !== -1 &&
+                  (!gapBetweenDates || gap >= gapBetweenDates)
+                ) {
                   index += 1;
                   return (
                     <tr key={code}>
