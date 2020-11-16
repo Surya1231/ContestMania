@@ -22,6 +22,7 @@ const ccCategories = {
   LongChallenge: { name: 'Long Challenge', search: 'Challenge' },
   LunchTime: { name: 'Lunch Time', search: 'Lunchtime' },
   CookOff: { name: 'Cook Off', search: 'Cook-off' },
+  ICPC: { name: 'ICPC', search: 'ICPC' },
 };
 
 const initialState = {

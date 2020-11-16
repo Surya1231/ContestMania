@@ -14,7 +14,7 @@ const About = () => {
             />
             <div className="card-body">
               <h5 className="card-title">Suryaprakash Agarwal</h5>
-              <p className="card-text">Developer of portal . You can also contribute</p>
+              <p className="card-text">Full stack developer, student at MNIT Jaipur. (Developer of Portal)</p>
               <a
                 href="https://surya1231.github.io/"
                 className="btn btn-outline-info px-4 mr-2 btn-sm"

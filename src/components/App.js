@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import About from './About/About';
 import Codeforces from './Codeforces/Codeforces';
 import { FullScreenError } from './Common/Common';
@@ -19,6 +20,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    ReactGA.initialize('G-JT0E9JWDHS');
     // buildGlobalSolutionData();
     // getCodeChefContestList();
   }
