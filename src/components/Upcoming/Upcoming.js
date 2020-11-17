@@ -37,7 +37,7 @@ class Upcoming extends Component {
     this.setState({ loading: false });
 
     if (!contestList.length && !newContestList.length) this.setState({ error: 'Something went wrong on our side.' });
-    else {
+    if (newContestList.length) {
       const { updateUpcomingContestList } = this.props;
       updateUpcomingContestList(newContestList);
     }

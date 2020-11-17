@@ -43,6 +43,7 @@ body {
 
 .custom-toolkit {
   border-radius: 100px !important;
+  font-size: smaller;
 }
 
 .btn:focus,

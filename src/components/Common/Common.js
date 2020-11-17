@@ -42,7 +42,7 @@ export const TooltipBox = ({ title = 'i', message }) => {
   return (
     <span
       type="button"
-      className="custom-toolkit text-white ml-2 px-2 rounded bg-primary"
+      className="custom-toolkit text-white ml-2 px-2 rounded bg-secondary"
       data-toggle="tooltip"
       data-placement="top"
       title={message}
