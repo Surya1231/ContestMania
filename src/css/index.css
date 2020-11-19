@@ -46,6 +46,10 @@ body {
   font-size: smaller;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .btn:focus,
 .btn:active,
 .form-control:focus,
@@ -154,6 +158,26 @@ body {
 
 #problems-table .problems-inner-table {
   font-size: small;
+}
+
+/* Company */
+.company-container {
+  overflow-x: auto;
+}
+
+#company-table th {
+  background-color: #173b5c;
+}
+
+#company-table .bg-solved {
+  background-color: #21d4fd;
+  background-image: linear-gradient(270deg, #21a2fd 0%, #b721ff 100%);
+}
+
+#company-table .bg-reviewed {
+  background-color: #dc3545;
+  background: -webkit-linear-gradient(to left, #f58e19, #f12711);
+  background: linear-gradient(to left, #f58e19, #f12711);
 }
 
 /* Upcoming */

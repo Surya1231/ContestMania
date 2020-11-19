@@ -9,6 +9,8 @@ import News from './News/News';
 import Problems from './Problems/Problems';
 import Upcoming from './Upcoming/Upcoming';
 import CodeChef from './CodeChef/CodeChef';
+import Company from './Company/Company';
+import CompanyProblems from './Company/CompanyProblems';
 
 // import { buildGlobalSolutionData } from '../api/data/solutionsCreator';
 // import { getCodeChefContestList } from '../api/ccApi';
@@ -36,6 +38,8 @@ class App extends React.Component {
           <Route exact path="/" component={Codeforces} />
           <Route exact path="/problems" component={Problems} />
           <Route exact path="/codechef" component={CodeChef} />
+          <Route exact path="/company" component={Company} />
+          <Route exact path="/company/:id" component={CompanyProblems} />
           <Route exact path="/upcoming" component={Upcoming} />
           <Route exact path="/about" component={About} />
           <Route exact path="/news" component={News} />

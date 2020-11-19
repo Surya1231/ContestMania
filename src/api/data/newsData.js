@@ -1,6 +1,12 @@
 /* eslint-disable max-len */
 export const newsData = [
   {
+    id: 5,
+    news: 'New Tab company is updated to see company wise questions',
+    date: '19-11-20',
+    style: 'success',
+  },
+  {
     id: 4,
     news: 'Codechef User support is in development phase, will be live very soon.',
     date: '07-11-20',

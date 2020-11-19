@@ -8,7 +8,7 @@ import { FullScreenError, LoadingFadeIn } from '../Common/Common';
 import ProblemsTable from './ProblemsTable';
 
 const applicableFilters = ['category', 'search', 'index', 'minRating', 'maxRating'];
-const localFilters = ['category', 'search', 'index', 'minRating', 'maxRating'];
+const localFilters = ['category', 'index', 'minRating', 'maxRating'];
 
 class Problems extends Component {
   constructor(props) {
@@ -58,10 +58,8 @@ class Problems extends Component {
         query += `${key}=${state[key]}`;
       }
     });
-    if (query.length > 1) {
-      const { history } = this.props;
-      history.push(query);
-    }
+    const { history } = this.props;
+    history.push(query);
     const { updateProblemsFilters } = this.props;
     updateProblemsFilters(filters);
   };
