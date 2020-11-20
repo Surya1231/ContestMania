@@ -11,6 +11,7 @@ import Upcoming from './Upcoming/Upcoming';
 import CodeChef from './CodeChef/CodeChef';
 import Company from './Company/Company';
 import CompanyProblems from './Company/CompanyProblems';
+import Home from './Home/Home';
 
 // import { buildGlobalSolutionData } from '../api/data/solutionsCreator';
 // import { getCodeChefContestList } from '../api/ccApi';
@@ -32,10 +33,11 @@ class App extends React.Component {
     const { pathname } = location;
     return (
       <div>
-        <Navbar pathname={pathname} s />
+        <Navbar pathname={pathname} />
 
         <Switch>
-          <Route exact path="/" component={Codeforces} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/codeforces" component={Codeforces} />
           <Route exact path="/problems" component={Problems} />
           <Route exact path="/codechef" component={CodeChef} />
           <Route exact path="/company" component={Company} />

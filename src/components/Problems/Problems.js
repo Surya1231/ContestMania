@@ -8,7 +8,7 @@ import { FullScreenError, LoadingFadeIn } from '../Common/Common';
 import ProblemsTable from './ProblemsTable';
 
 const applicableFilters = ['category', 'search', 'index', 'minRating', 'maxRating'];
-const localFilters = ['category', 'index', 'minRating', 'maxRating'];
+const localFilters = ['category'];
 
 class Problems extends Component {
   constructor(props) {

@@ -23,7 +23,7 @@ const Navbar = ({ pathname }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className={`nav-link ${pathname === '/' ? 'active' : ''}`} to="/">
+              <Link className={`nav-link ${pathname === '/codeforces' ? 'active' : ''}`} to="/codeforces">
                 Codeforces
               </Link>
             </li>
