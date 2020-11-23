@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Axios from 'axios';
 import ReactGA from 'react-ga';
 import About from './About/About';
 import Codeforces from './Codeforces/Codeforces';
@@ -13,8 +14,7 @@ import Company from './Company/Company';
 import CompanyProblems from './Company/CompanyProblems';
 import Home from './Home/Home';
 
-// import { buildGlobalSolutionData } from '../api/data/solutionsCreator';
-// import { getCodeChefContestList } from '../api/ccApi';
+// import { buildGlobalSolutionData } from '../api/data/solutionsCreator';;
 
 class App extends React.Component {
   constructor(props) {
@@ -24,8 +24,8 @@ class App extends React.Component {
 
   componentDidMount() {
     ReactGA.initialize('G-JT0E9JWDHS');
+    Axios.get('https://api.countapi.xyz/hit/contestmania.web.app/visits');
     // buildGlobalSolutionData();
-    // getCodeChefContestList();
   }
 
   render() {

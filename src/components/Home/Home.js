@@ -1,12 +1,17 @@
 import React from 'react';
 import News from '../News/News';
+import Visit from './Visit';
 
 function Home() {
   return (
     <div id="home">
       <div
         className="head bg-info"
-        style={{ backgroundImage: `url("${process.env.PUBLIC_URL}/images/home-bg.jpg")`, backgroundSize: 'cover' }}
+        style={{
+          backgroundImage: `url("${process.env.PUBLIC_URL}/images/home-bg.jpg")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'right',
+        }}
       >
         <div className="home-content text-white">
           <div className="home-shadow-box px-3 py-4">
@@ -17,6 +22,8 @@ function Home() {
             </div>
           </div>
         </div>
+
+        <Visit />
       </div>
 
       <div className="py-4 px-3 mx-auto" style={{ maxWidth: '1200px' }}>

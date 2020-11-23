@@ -90,7 +90,7 @@ body {
 
 #home .head {
   position: relative;
-  height: 93vh;
+  height: calc(100vh - 50px);
   text-align: center;
 }
 
@@ -116,6 +116,35 @@ body {
   vertical-align: middle;
   background: #00000096;
   border-radius: 2rem;
+}
+
+.visits {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  padding: 1.2rem 1.4rem;
+  border-radius: 15rem;
+  color: white;
+  background-color: #00000096;
+  cursor: pointer;
+  box-shadow: 1rem 1rem rgba(0, 0, 0);
+}
+
+.visits:hover,
+.report-issue:hover {
+  background-color: #173b5c;
+}
+
+.report-issue {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  padding: 1.2rem 1.2rem;
+  border-radius: 15rem;
+  color: white;
+  background-color: #00000096;
+  cursor: pointer;
+  box-shadow: 1rem 1rem rgba(0, 0, 0);
 }
 
 /* codeforces */

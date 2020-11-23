@@ -10,6 +10,8 @@ class CompanyProblems extends Component {
     this.state = {
       name: 'Loading',
       questionHtml: '',
+      solutionHtml: '',
+      showSolution: false,
       tags: [],
       loading: true,
       error: '',
@@ -25,6 +27,7 @@ class CompanyProblems extends Component {
       this.setState({
         name: problem[0].name,
         questionHtml: problem[0].questionHtml,
+        solutionHtml: problem[0].solutionHtml,
         tags: problem[0].tags,
         loading: false,
       });
@@ -36,9 +39,16 @@ class CompanyProblems extends Component {
     }
   }
 
+  toggleSolution = () => {
+    const { showSolution } = this.state;
+    this.setState({
+      showSolution: !solutionHtml,
+    });
+  };
+
   render() {
-    const { loading, error } = this.state;
-    const { name, questionHtml, tags } = this.state;
+    const { loading, error, showSolution } = this.state;
+    const { name, questionHtml, tags, solutionHtml } = this.state;
 
     return (
       <div id="company-problems">
@@ -51,6 +61,7 @@ class CompanyProblems extends Component {
               <hr className="mb-0" />
               <div dangerouslySetInnerHTML={{ __html: questionHtml }} />
               <br />
+
               <h5> Companies </h5>
               <hr className="my-1" />
               {tags.map((tag) => (
@@ -58,12 +69,22 @@ class CompanyProblems extends Component {
                   {tag}
                 </button>
               ))}
-              <h5 className="mt-4"> Solution </h5>
+
+              <h5 className="mt-4"> Solutions </h5>
               <hr className="my-2" />
               <li>
+                <a href="#" onClick={this.toggleSolution}>
+                  {showSolution ? 'Hide' : 'View'} solution
+                </a>
+                {showSolution && (
+                  <div className="solution-box border">
+                    <div dangerouslySetInnerHTML={{ __html: solutionHtml }} />
+                  </div>
+                )}
+              </li>
+              <li>
                 <a href={`https://www.google.com/search?q=Leetcode+${name.replace(' ', '+')}+Solution`} target="_blank">
-                  {' '}
-                  Google Solution{' '}
+                  Google Solution
                 </a>
               </li>
             </div>
