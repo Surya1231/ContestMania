@@ -42,7 +42,7 @@ class CompanyProblems extends Component {
   toggleSolution = () => {
     const { showSolution } = this.state;
     this.setState({
-      showSolution: !solutionHtml,
+      showSolution: !showSolution,
     });
   };
 
@@ -77,7 +77,7 @@ class CompanyProblems extends Component {
                   {showSolution ? 'Hide' : 'View'} solution
                 </a>
                 {showSolution && (
-                  <div className="solution-box border">
+                  <div className="solution-box border px-3 py-3 bg-light">
                     <div dangerouslySetInnerHTML={{ __html: solutionHtml }} />
                   </div>
                 )}
