@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-curly-newline */
 import React from 'react';
 
 export const LoadingFadeIn = () => {
@@ -49,5 +50,38 @@ export const TooltipBox = ({ title = 'i', message }) => {
     >
       {title}
     </span>
+  );
+};
+
+export const SearchInput = ({ handleChange, search }) => {
+  return (
+    <div className="form-group">
+      <label> Search </label>
+      <input
+        className="form-control form-control-sm search-input"
+        type="text"
+        name="search"
+        value={search}
+        placeholder="Search anything here"
+        onChange={handleChange}
+      />
+      {search && (
+        <button
+          type="button"
+          className="close text-danger search-close"
+          aria-label="Close"
+          onClick={() =>
+            handleChange({
+              target: {
+                name: 'search',
+                value: '',
+              },
+            })
+          }
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      )}
+    </div>
   );
 };

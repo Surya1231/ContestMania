@@ -6,7 +6,7 @@ import { getCfContest } from '../../api/cfApi';
 import { UpdateCfContestAction, UpdateCfFiltersAction } from '../../store/reducers/CfReducer';
 import CfTable from './CfTable';
 import CfUser from '../Common/CfUser';
-import { FullScreenError, LoadingFadeIn } from '../Common/Common';
+import { FullScreenError, LoadingFadeIn, SearchInput } from '../Common/Common';
 
 const applicableFilters = ['category', 'search', 'filter'];
 const localFilters = ['category'];
@@ -85,17 +85,7 @@ class Codeforces extends Component {
         <div className="row mx-0">
           <div className="col-lg-2 col-md-3 mx-0 px-0 py-4 border-right">
             <div className="sidebar px-3">
-              <div className="form-group">
-                <label>Search</label>
-                <input
-                  className="form-control form-control-sm"
-                  type="text"
-                  placeholder="Search Here Anything"
-                  name="search"
-                  value={search}
-                  onChange={this.handleChange}
-                />
-              </div>
+              <SearchInput search={search} handleChange={this.handleChange} />
               <hr />
               <div className="form-group">
                 <label>Category </label>

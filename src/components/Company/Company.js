@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
 import { clearCompanyUserDataAction, updateCompanyFiltersAction } from '../../store/reducers/CompanyReducer';
-import { FullScreenError, LoadingFadeIn } from '../Common/Common';
+import { FullScreenError, LoadingFadeIn, SearchInput } from '../Common/Common';
 import CompanyTable from './CompanyTable';
 
 const applicableFilters = ['company', 'search', 'status', 'difficulty'];
@@ -72,17 +72,7 @@ class Company extends Component {
         <div className="row mx-0">
           <div className="col-lg-2 col-md-3 px-0 border-right">
             <div className="sidebar px-3 py-4">
-              <div className="form-group">
-                <label> Search </label>
-                <input
-                  className="form-control form-control-sm"
-                  type="text"
-                  name="search"
-                  value={search}
-                  placeholder="Search anything here"
-                  onChange={this.handleChange}
-                />
-              </div>
+              <SearchInput search={search} handleChange={this.handleChange} />
               <hr />
 
               <div className="form-group">

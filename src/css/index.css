@@ -58,6 +58,26 @@ body {
   outline: 0px !important;
 }
 
+.overflow-x-auto {
+  overflow-y: auto;
+}
+
+.search-input {
+  padding-right: 30px;
+  display: inline-block;
+}
+
+.search-close {
+  font-size: xx-large;
+  margin-left: -30px;
+  padding-right: 5px !important;
+}
+
+.search-close:focus,
+.search-close span:focus {
+  outline: none !important;
+}
+
 /* Navigation bar */
 
 #navbar {

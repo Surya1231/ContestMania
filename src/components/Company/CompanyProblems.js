@@ -59,7 +59,7 @@ class CompanyProblems extends Component {
             <div className="bg-white shadow-sm py-4 px-3 content-box">
               <h4> {name} </h4>
               <hr className="mb-0" />
-              <div dangerouslySetInnerHTML={{ __html: questionHtml }} />
+              <div className="overflow-x-auto" dangerouslySetInnerHTML={{ __html: questionHtml }} />
               <br />
 
               <h5> Companies </h5>
@@ -77,7 +77,7 @@ class CompanyProblems extends Component {
                   {showSolution ? 'Hide' : 'View'} solution
                 </a>
                 {showSolution && (
-                  <div className="solution-box border px-3 py-3 bg-light">
+                  <div className="solution-box border px-3 py-3 bg-light overflow-x-auto">
                     <div dangerouslySetInnerHTML={{ __html: solutionHtml }} />
                   </div>
                 )}
