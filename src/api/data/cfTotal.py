@@ -12,8 +12,8 @@ for i in x['result']:
         l = i["id"]
         break
 
-print("Total id to be updated ",l)
-print("Total estimated time : ",(l-start+1)*5," seconds")
+print("\nLast id to be updated ",l)
+print("Total estimated time : ",(l-start+1)*3," seconds\n")
 
 f = open("cfTotalData.js","a")
 for id in range(start,l+1):

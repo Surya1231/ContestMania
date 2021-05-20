@@ -48,15 +48,13 @@ const Navbar = ({ pathname }) => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${pathname === '/about' ? 'active' : ''}`} to="/about">
-                About
+              <Link className={`nav-link ${pathname === '/compiler' ? 'active' : ''}`} to="/compiler">
+                Compiler
               </Link>
             </li>
-          </ul>
-          <ul className="navbar-nav py-0">
-            <li className="nav-item navbar-text mr-2 py-0 ">
-              <Link className={`nav-link ${pathname === '/news' ? 'active' : ''}`} to="/news">
-                News
+            <li className="nav-item">
+              <Link className={`nav-link ${pathname === '/about' ? 'active' : ''}`} to="/about">
+                About
               </Link>
             </li>
           </ul>

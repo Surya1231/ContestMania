@@ -1,7 +1,10 @@
 /* eslint-disable*/
+import { ccContestDataHtml } from './data/ccContestData';
 import { getHtmlResponse } from './utilsApi';
 
 function extractContestFromTable(table, type, list) {
+  if (!table || !table.rows) return;
+
   for (let i = 1; i < table.rows.length; i++) {
     const row = table.rows[i];
     //if (i < 2) console.dir(row.cells[1]);
@@ -19,7 +22,9 @@ function extractContestFromTable(table, type, list) {
 
 export async function getCodeChefContestList() {
   const url = 'https://cors-anywhere.herokuapp.com/https://www.codechef.com/contests/';
-  const html = await getHtmlResponse(url);
+  const html = ccContestDataHtml;
+
+  console.log(html);
 
   const domElement = document.createElement('div');
   domElement.innerHTML = html;
@@ -28,11 +33,12 @@ export async function getCodeChefContestList() {
   const futureTable = tables[1];
   const pastTable = tables[2];
 
+  console.log(futureTable);
+
   const ccContestList = [];
   extractContestFromTable(futureTable, 'Future', ccContestList);
   extractContestFromTable(currentTable, 'Present', ccContestList);
   extractContestFromTable(pastTable, 'Past', ccContestList);
-
   domElement.remove();
   return ccContestList;
 }

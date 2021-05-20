@@ -13,13 +13,14 @@ class Visit extends Component {
 
   componentDidMount() {
     Axios.get('https://api.countapi.xyz/get/contestmania.web.app/visits').then((res) => {
+      const scale = 100;
       const { value } = res.data;
-      const time = 2000 / value;
+      const time = (2000 * scale) / value;
       let i = 1;
       const timer = setInterval(() => {
         i += 1;
-        this.setState({ visits: i });
-        if (i >= value) clearInterval(timer);
+        this.setState({ visits: `${(i * scale) / 1000}k` });
+        if (i * scale >= value) clearInterval(timer);
       }, time);
     });
   }

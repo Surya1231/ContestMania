@@ -45,7 +45,7 @@ class App extends React.Component {
           <Route exact path="/upcoming" component={Upcoming} />
           <Route exact path="/about" component={About} />
           <Route exact path="/news" component={News} />
-          <Route component={FullScreenError} />
+          <Route render={() => <FullScreenError message="Following page couldn't be found" />} />
         </Switch>
       </div>
     );

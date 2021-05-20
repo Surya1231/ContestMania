@@ -8,6 +8,11 @@ import CCTable from './CCTable';
 
 const applicableFilters = ['category', 'search'];
 const localFilters = ['category'];
+const CORS_ERROR = `We are unable to process your 
+  request because of CORS error, Please click on 'Solve CORS'
+   button and click then click 'Request temporary access to demo server'. 
+   You can also try various extensions on chrome that solve CORS issue.
+    We will soon find some permenant solution' `;
 
 class CodeChef extends Component {
   constructor(props) {
@@ -34,9 +39,8 @@ class CodeChef extends Component {
     if (!ccContestList.length) this.setState({ loading: true, error: '' });
     const newCodeChefContestList = await getCodeChefContestList();
     this.setState({ loading: false });
-    if (!ccContestList.length && !newCodeChefContestList.length)
-      this.setState({ error: 'Something went wrong please try again' });
-    else {
+    if (!ccContestList.length && !newCodeChefContestList.length) this.setState({ error: CORS_ERROR });
+    else if (newCodeChefContestList.length > 0) {
       const { updateCodeChefContestList } = this.props;
       updateCodeChefContestList(newCodeChefContestList);
     }
@@ -100,6 +104,10 @@ class CodeChef extends Component {
                 </select>
               </div>
               <hr />
+              <div className="alert alert-danger">
+                Note: Everything on this page is static and will not update with real time beacuse of some issue with
+                codechef apis.
+              </div>
             </div>
           </div>
 

@@ -5,6 +5,12 @@ import { updateUpcomingContestAction } from '../../store/reducers/UpcomingReduce
 import { FullScreenError, LoadingFadeIn } from '../Common/Common';
 import UpcomingTable from './UpcomingTable';
 
+const CORS_ERROR = `We are unable to process your 
+  request because of CORS error, Please click on 'Solve CORS'
+   button and click then click 'Request temporary access to demo server'. 
+   You can also try various extensions on chrome that solve CORS issue.
+    We will soon find some permenant solution' `;
+
 class Upcoming extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +42,7 @@ class Upcoming extends Component {
     const newContestList = await getUpcomingContest(categoryIdList);
     this.setState({ loading: false });
 
-    if (!contestList.length && !newContestList.length) this.setState({ error: 'Something went wrong on our side.' });
+    if (!contestList.length && !newContestList.length) this.setState({ error: CORS_ERROR });
     if (newContestList.length) {
       const { updateUpcomingContestList } = this.props;
       updateUpcomingContestList(newContestList);
@@ -72,6 +78,9 @@ class Upcoming extends Component {
                 </div>
               ))}
               <hr />
+              <a href="https://cors-anywhere.herokuapp.com/corsdemo" className="btn btn-danger btn-sm">
+                Solve CORS
+              </a>
             </div>
           </div>
 

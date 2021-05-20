@@ -1,6 +1,12 @@
 /* eslint-disable max-len */
 export const newsData = [
   {
+    id: 6,
+    news: 'CF contest update. Codechef converted to static and minor bugs fixed',
+    date: '20-05-21',
+    style: 'info',
+  },
+  {
     id: 5,
     news: 'New Tab company is updated to see company wise questions',
     date: '19-11-20',
