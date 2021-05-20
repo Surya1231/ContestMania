@@ -2,10 +2,10 @@
 
 A Web-portal for keep track of your competitive programming on various platforms. Project is live at [https://contestmania.web.app](https://contestmania.web.app).
 
-## Features Planned
+## Features Live
 
-- Contest ( category wise contest from different websites)
-- User (Get user info)
+- Codeforces
+- Codechef
 - Upcoming ( list of upcoming contest)
 - Problems (trending problems)
 - About ( Description of portal)
