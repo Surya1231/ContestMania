@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CCTable(props) {
+const CCTable = (props) => {
   const { search, category, contestList } = props;
   const categoryLowerCase = category.toLowerCase();
   const gapBetweenDates = category === 'Challenge' ? 10 : '';

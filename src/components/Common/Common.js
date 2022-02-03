@@ -56,13 +56,14 @@ export const TooltipBox = ({ title = 'i', message }) => {
 export const SearchInput = ({ handleChange, search }) => {
   return (
     <div className="form-group">
-      <label> Search </label>
+      <label htmlFor="SearchInput"> Search </label>
       <input
+        id="SearchInput"
         className="form-control form-control-sm search-input"
         type="text"
         name="search"
         value={search}
-        placeholder="Search anything here"
+        placeholder="eg: Contest Name"
         onChange={handleChange}
       />
       {search && (

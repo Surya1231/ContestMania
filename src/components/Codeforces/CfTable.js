@@ -18,8 +18,8 @@ class CfTable extends Component {
       <div className="py-4" id="cf-table">
         <div className="row mx-0">
           <div className="col-md-12 px-1 order-2">
-            <table className="table table-bordered bg-white shadow-sm rounded">
-              <thead className="thead-dark">
+            <table className="table table-bordered table-hover rounded">
+              <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Contest Name</th>
@@ -56,7 +56,7 @@ class CfTable extends Component {
                     if (completed) completedContest += 1;
 
                     return (
-                      <tr key={id}>
+                      <tr key={id} className={`align-middle + ${completed ? 'table-success' : ''}`}>
                         <td>{index}</td>
                         <td>
                           <a rel="noopener noreferrer" target="_blank" href={contestLink}>
@@ -109,15 +109,15 @@ class CfTable extends Component {
               <div className="row mx-0">
                 <div className="col-md col-auto">
                   <b>Contest :</b>
-                  <span className="text-success">{attemptedContest}</span>/{index}
+                  <span className="text-success ml-2">{attemptedContest}</span>/{index}
                 </div>
                 <div className="col-md col-auto">
                   <b>Questions :</b>
-                  <span className="text-success">{solvedProblems}</span>/{problems}
+                  <span className="text-success ml-2">{solvedProblems}</span>/{problems}
                 </div>
                 <div className="col-md col-auto">
                   <b>Completed :</b>
-                  <span className="text-success">{completedContest}</span>/{index}
+                  <span className="text-success ml-2">{completedContest}</span>/{index}
                 </div>
               </div>
             </div>
