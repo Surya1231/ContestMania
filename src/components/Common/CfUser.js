@@ -139,7 +139,7 @@ class CfUser extends Component {
         ))}
         {loggedIn ? (
           <button className="btn btn-danger mr-2 mt-3 btn-sm" type="button" onClick={this.logOut}>
-            Logout
+            <i className="fas fa-sign-out-alt" /> Logout
           </button>
         ) : (
           <button className="btn btn-success mr-2 mt-3 btn-sm" type="button" onClick={this.logIn}>
@@ -147,7 +147,7 @@ class CfUser extends Component {
           </button>
         )}
         <button className="btn btn-info mt-3 btn-sm" type="button" onClick={this.logIn}>
-          Refresh
+          <i className="fas fa-redo-alt" /> Refresh
         </button>
       </div>
     );

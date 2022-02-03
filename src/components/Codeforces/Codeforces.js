@@ -83,8 +83,8 @@ class Codeforces extends Component {
     return (
       <div className="bg-light" id="codeforces">
         <div className="row mx-0">
-          <div className="col-lg-2 col-md-3 mx-0 px-0 py-4 border-right codeforces-sidebar">
-            <div className="sidebar px-3 ">
+          <div className="col-lg-2 col-md-3 mx-0 px-0 py-2 border-right codeforces-sidebar">
+            <div className="sidebar px-2">
               <div>
                 <SearchInput search={search} handleChange={this.handleChange} />
                 <hr />
@@ -123,7 +123,7 @@ class Codeforces extends Component {
             </div>
           </div>
 
-          <div className="content-box col-lg-10 col-md-9 mx-0 px-1 px-md-3 ">
+          <div className="content-box col-lg-10 col-md-9 mx-0 px-1 px-md-2 ">
             {loading && <LoadingFadeIn />}
             {error && <FullScreenError message={error} />}
             {!loading && !error && (

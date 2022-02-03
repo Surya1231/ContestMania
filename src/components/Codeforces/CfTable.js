@@ -73,16 +73,21 @@ class CfTable extends Component {
                                   target="_blank"
                                   href={`${contestLink}/problem/${question}`}
                                 >
-                                  {`${question} `}
+                                  <i className="fas fa-check-circle" /> {`${question} `}
                                 </a>
                               ))
                             : '-'}
                         </td>
                         <td
                           className={`${
-                            completed ? 'bg-completed text-white' : solved.length ? 'bg-unsolved text-white' : ''
+                            completed
+                              ? 'bg-completed text-white'
+                              : solved.length
+                              ? 'bg-unsolved text-white'
+                              : 'bg-notattempted'
                           }`}
                         >
+                          {completed ? <i className="fas fa-check-circle mr-2" /> : null}
                           {unSolvedString ||
                             unSolved.map((question) => (
                               <a
@@ -91,6 +96,7 @@ class CfTable extends Component {
                                 target="_blank"
                                 href={`${contestLink}/problem/${question}`}
                               >
+                                <i className="fas fa-pen-square" />
                                 {`${question} `}
                               </a>
                             ))}
@@ -105,19 +111,28 @@ class CfTable extends Component {
           </div>
 
           <div className="col-md-12 px-1 order-1">
-            <div className="alert alert-info py-1">
+            <div className="alert alert-info py-3">
               <div className="row mx-0">
                 <div className="col-md col-auto">
-                  <b>Contest :</b>
-                  <span className="text-success ml-2">{attemptedContest}</span>/{index}
+                  <h6>Contest</h6>
+                  <span className="text-success">
+                    <strong>{attemptedContest}</strong>
+                  </span>{' '}
+                  / <strong>{index}</strong>
                 </div>
                 <div className="col-md col-auto">
-                  <b>Questions :</b>
-                  <span className="text-success ml-2">{solvedProblems}</span>/{problems}
+                  <h6>Questions</h6>
+                  <span className="text-success">
+                    <strong>{solvedProblems}</strong>
+                  </span>{' '}
+                  / <strong> {problems}</strong>
                 </div>
                 <div className="col-md col-auto">
-                  <b>Completed :</b>
-                  <span className="text-success ml-2">{completedContest}</span>/{index}
+                  <h6>Completed</h6>
+                  <span className="text-success">
+                    <strong>{completedContest}</strong>
+                  </span>{' '}
+                  / <strong>{index}</strong>
                 </div>
               </div>
             </div>
