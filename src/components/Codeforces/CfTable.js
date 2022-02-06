@@ -56,7 +56,7 @@ class CfTable extends Component {
                     if (completed) completedContest += 1;
 
                     return (
-                      <tr key={id} className={`align-middle + ${completed ? 'table-success' : ''}`}>
+                      <tr key={id} className="align-middle">
                         <td>{index}</td>
                         <td>
                           <a rel="noopener noreferrer" target="_blank" href={contestLink}>

@@ -73,58 +73,53 @@ class Company extends Component {
           <div className="col-lg-2 col-md-3 px-0 border-right">
             <div className="sidebar px-3 py-4">
               <SearchInput search={search} handleChange={this.handleChange} />
-              <hr />
-
-              <div className="form-group">
-                <label> Company </label>
-                <select
-                  className="form-control form-control-sm"
-                  name="company"
-                  value={company}
-                  onChange={this.handleChange}
-                >
-                  <option value=""> All </option>
-                  {categories.map((category) => (
-                    <option key={category}>{category}</option>
-                  ))}
-                </select>
+              <div>
+                <div className="form-group">
+                  <label> Company </label>
+                  <select
+                    className="form-control form-control-sm"
+                    name="company"
+                    value={company}
+                    onChange={this.handleChange}
+                  >
+                    <option value=""> All </option>
+                    {categories.map((category) => (
+                      <option key={category}>{category}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label> Status </label>
+                  <select
+                    className="form-control form-control-sm"
+                    name="status"
+                    value={status}
+                    onChange={this.handleChange}
+                  >
+                    <option value=""> All </option>
+                    <option value="1"> Solved </option>
+                    <option value="2"> Reviewed </option>
+                    <option value="0"> Unsolved </option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label> Difficulty </label>
+                  <select
+                    className="form-control form-control-sm"
+                    name="difficulty"
+                    value={difficulty}
+                    onChange={this.handleChange}
+                  >
+                    <option value=""> All </option>
+                    <option> Easy </option>
+                    <option> Medium </option>
+                    <option> Hard </option>
+                  </select>
+                </div>
+                <button type="button" className="btn btn-sm btn-danger" onClick={this.clearUserData}>
+                  Clear User Data
+                </button>
               </div>
-
-              <div className="form-group">
-                <label> Status </label>
-                <select
-                  className="form-control form-control-sm"
-                  name="status"
-                  value={status}
-                  onChange={this.handleChange}
-                >
-                  <option value=""> All </option>
-                  <option value="1"> Solved </option>
-                  <option value="2"> Reviewed </option>
-                  <option value="0"> Unsolved </option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label> Difficulty </label>
-                <select
-                  className="form-control form-control-sm"
-                  name="difficulty"
-                  value={difficulty}
-                  onChange={this.handleChange}
-                >
-                  <option value=""> All </option>
-                  <option> Easy </option>
-                  <option> Medium </option>
-                  <option> Hard </option>
-                </select>
-              </div>
-              <hr />
-
-              <button type="button" className="btn btn-sm btn-danger" onClick={this.clearUserData}>
-                Clear User Data
-              </button>
-              <hr />
             </div>
           </div>
 

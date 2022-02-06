@@ -87,7 +87,7 @@ class Codeforces extends Component {
             <div className="sidebar px-2">
               <div>
                 <SearchInput search={search} handleChange={this.handleChange} />
-                <hr />
+
                 <div className="form-group">
                   <label>Category </label>
                   <select
@@ -103,7 +103,7 @@ class Codeforces extends Component {
                     ))}
                   </select>
                 </div>
-                <hr />
+
                 <div className="form-group">
                   <label> Filter</label>
                   <select
