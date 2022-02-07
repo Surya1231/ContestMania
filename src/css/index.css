@@ -212,19 +212,23 @@ body {
 }
 /* codeforces */
 
-#cf-table {
+#cf-table,
+#cc-container,
+#problems-table {
   overflow-x: auto;
   min-height: 90vh;
 }
 
 #cf-table th,
-#company-table th {
+#company-table th,
+#cc-table th {
   background-color: #17a2b8;
   color: #fff;
   text-align: center;
 }
 #cf-table td,
-#company-table td {
+#company-table td,
+#cc-table td {
   font-size: 12px;
 }
 .bg-solved {
@@ -292,23 +296,8 @@ body {
   padding: 10px;
   border-radius: 5px;
 }
-/* Codechef */
-
-#cc-container {
-  overflow-x: auto;
-  min-height: 90vh;
-}
-
-#cc-table th {
-  background-color: #173b5c;
-}
 
 /* Problems Table */
-
-#problems-table {
-  overflow-x: auto;
-  min-height: 90vh;
-}
 
 #problems-table {
   border-radius: 8px;

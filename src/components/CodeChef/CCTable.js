@@ -9,8 +9,8 @@ const CCTable = (props) => {
     <div id="cc-container">
       <div className="row mx-0 py-3">
         <div className="col-md-12 px-1  order-12">
-          <table className="table table-bordered bg-white shadow-sm rounded" id="cc-table">
-            <thead className="thead-dark">
+          <table className="table table-bordered table-hover rounded" id="cc-table">
+            <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Code</th>
@@ -53,11 +53,18 @@ const CCTable = (props) => {
         </div>
 
         <div className="col-md-12 px-1 order-1">
-          <div className="alert alert-primary py-1">
+          <div className="alert alert-primary py-2">
             <div className="row mx-0">
               <div className="col-md col-auto">
-                <b> Total Contest : </b>
-                {index}
+                <p className="h5">
+                  Total Contest
+                  <span className="badge badge-warning ml-2" style={{ letterSpacing: '1px' }}>
+                    Outdated
+                  </span>
+                </p>
+                <span className="badge badge-primary px-2 py-1" style={{ letterSpacing: '1px' }}>
+                  {index}
+                </span>
               </div>
             </div>
           </div>
@@ -65,6 +72,6 @@ const CCTable = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default CCTable;

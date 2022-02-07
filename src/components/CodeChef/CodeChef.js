@@ -105,8 +105,8 @@ class CodeChef extends Component {
               </div>
               <hr />
               <div className="alert alert-danger">
-                Note: Everything on this page is static and will not update with real time beacuse of some issue with
-                codechef apis.
+                Everything on this page is static and will not update with real time beacuse of some issue with codechef
+                APIs.
               </div>
             </div>
           </div>
