@@ -12,6 +12,7 @@ import Upcoming from './Upcoming/Upcoming';
 import CodeChef from './CodeChef/CodeChef';
 import Company from './Company/Company';
 import CompanyProblems from './Company/CompanyProblems';
+import Compiler from './Compiler/Compiler';
 import Home from './Home/Home';
 
 // import { buildGlobalSolutionData } from '../api/data/solutionsCreator';;
@@ -45,6 +46,7 @@ class App extends React.Component {
           <Route exact path="/upcoming" component={Upcoming} />
           <Route exact path="/about" component={About} />
           <Route exact path="/news" component={News} />
+          <Route exact path="/compiler" component={Compiler} />
           <Route render={() => <FullScreenError message="Following page couldn't be found" />} />
         </Switch>
       </div>

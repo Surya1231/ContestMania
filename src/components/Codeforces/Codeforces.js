@@ -83,45 +83,47 @@ class Codeforces extends Component {
     return (
       <div className="bg-light" id="codeforces">
         <div className="row mx-0">
-          <div className="col-lg-2 col-md-3 mx-0 px-0 py-4 border-right">
-            <div className="sidebar px-3">
-              <SearchInput search={search} handleChange={this.handleChange} />
-              <hr />
-              <div className="form-group">
-                <label>Category </label>
-                <select
-                  className="form-control form-control-sm"
-                  name="category"
-                  value={category}
-                  onChange={this.handleChange}
-                >
-                  {Object.keys(categories).map((categoryOption) => (
-                    <option key={categoryOption} value={categories[categoryOption].value}>
-                      {categories[categoryOption].name}
-                    </option>
-                  ))}
-                </select>
+          <div className="col-lg-2 col-md-3 mx-0 px-0 py-2 border-right codeforces-sidebar">
+            <div className="sidebar px-2">
+              <div>
+                <SearchInput search={search} handleChange={this.handleChange} />
+
+                <div className="form-group">
+                  <label>Category </label>
+                  <select
+                    className="form-control form-control-sm"
+                    name="category"
+                    value={category}
+                    onChange={this.handleChange}
+                  >
+                    {Object.keys(categories).map((categoryOption) => (
+                      <option key={categoryOption} value={categories[categoryOption].value}>
+                        {categories[categoryOption].name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="form-group">
+                  <label> Filter</label>
+                  <select
+                    className="form-control form-control-sm"
+                    name="filter"
+                    value={filter}
+                    onChange={(this, this.handleChange)}
+                  >
+                    <option value=""> All </option>
+                    <option value="1"> Attempted </option>
+                    <option value="0"> Not Attempted </option>
+                  </select>
+                </div>
               </div>
-              <div className="form-group">
-                <label> Filter</label>
-                <select
-                  className="form-control form-control-sm"
-                  name="filter"
-                  value={filter}
-                  onChange={(this, this.handleChange)}
-                >
-                  <option value=""> All </option>
-                  <option value="1"> Attempted </option>
-                  <option value="0"> Not Attempted </option>
-                </select>
-              </div>
-              <hr />
               <CfUser />
               <hr />
             </div>
           </div>
 
-          <div className="content-box col-lg-10 col-md-9 mx-0 px-1 px-md-3 ">
+          <div className="content-box col-lg-10 col-md-9 mx-0 px-1 px-md-2 ">
             {loading && <LoadingFadeIn />}
             {error && <FullScreenError message={error} />}
             {!loading && !error && (

@@ -9,9 +9,9 @@ import { updateCompanyUserDataAction } from '../../store/reducers/CompanyReducer
 function DifficultyButton({ difficulty }) {
   return (
     <>
-      {difficulty === 'Easy' && <span className="text-primary">Easy</span>}
-      {difficulty === 'Medium' && <span className="text-warning">Medium</span>}
-      {difficulty === 'Hard' && <span className="text-danger">Hard</span>}
+      {difficulty === 'Easy' && <span className="alert-success">Easy</span>}
+      {difficulty === 'Medium' && <span className="alert-warning">Medium</span>}
+      {difficulty === 'Hard' && <span className="alert-danger">Hard</span>}
     </>
   );
 }
@@ -46,12 +46,24 @@ class CompanyTable extends Component {
     let totalQuestions = 0;
     let reviewedQuestions = 0;
 
+    const difficultyClass = (diff) => {
+      let cls = '';
+      if (diff === 'Easy') {
+        cls = 'alert-success';
+      } else if (diff === 'Medium') {
+        cls = 'alert-warning';
+      } else {
+        cls = 'alert-danger';
+      }
+      return cls;
+    };
+
     return (
       <div className="company-container">
         <div className="row mx-0 py-4">
           <div className="col-md-12 px-0 order-12">
-            <table className="table table-bordered bg-white shadow-sm rounded" id="company-table">
-              <thead className="thead-dark">
+            <table className="table table-bordered table-hover rounded" id="company-table">
+              <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
@@ -78,22 +90,23 @@ class CompanyTable extends Component {
                     return (
                       <tr key={id}>
                         <td>{totalQuestions}</td>
-                        <td>
+                        <td className="font-weight-bold">
                           <Link to={`/company/${id}`} target="_blank">
                             {name}
                           </Link>
                         </td>
-                        <td>{acceptance}</td>
-                        <td>
+                        <td className="font-weight-bold text-muted">{acceptance}</td>
+                        <td className={difficultyClass(problem.difficulty)}>
                           <DifficultyButton difficulty={problem.difficulty} />
                         </td>
                         {userSatus === '0' ? (
                           <td className="py-1">
                             <button
                               type="button"
-                              className="btn btn-sm btn-info mr-1 mt-1"
+                              className="btn btn-sm btn-info mr-2 mt-1"
                               onClick={() => this.updateProblem(id, '1')}
                             >
+                              <i className="far fa-check-square mr-1" />
                               Done
                             </button>
                             <button
@@ -101,14 +114,22 @@ class CompanyTable extends Component {
                               className="btn btn-sm btn-warning mt-1 text-white"
                               onClick={() => this.updateProblem(id, '2')}
                             >
+                              <i className="far fa-eye mr-1" />
                               Review
                             </button>
                           </td>
                         ) : (
                           <td
-                            className={`cursor-pointer ${userSatus === '1' ? 'bg-solved' : 'bg-reviewed'}`}
+                            className={`cursor-pointer ${
+                              userSatus === '1' ? 'bg-completed text-white' : 'bg-solved text-white'
+                            }`}
                             onClick={() => this.updateProblem(id, '0')}
                           >
+                            {userSatus === '1' ? (
+                              <i className="fas fa-check-circle mr-2" />
+                            ) : (
+                              <i className="fas fa-check-double mr-2" />
+                            )}
                             <span className="text-white">{userSatus === '1' ? 'Completed' : 'Reviewed'}</span>
                           </td>
                         )}
@@ -122,29 +143,52 @@ class CompanyTable extends Component {
           </div>
 
           <div className="col-md-12 px-1 order-1">
-            <div className="alert alert-primary py-1">
+            <div className="alert alert-success py-2">
               <div className="row mx-0">
                 <div className="col-md col-auto">
-                  <b> Questions : </b>
-                  <span className="text-primary">{totalQuestions}</span>
+                  <p className="h5">Questions</p>
+                  <span
+                    className="badge badge-pill badge-primary px-2 py-1"
+                    style={{ fontSize: '16px', letterSpacing: '1px' }}
+                  >
+                    {totalQuestions}
+                  </span>
                 </div>
                 <div className="col-md col-auto">
-                  <b> Solved : </b>
-                  <span className="text-primary">{solvedQuestions}</span>
+                  <p className="h5">Solved</p>
+                  <span
+                    className="badge badge-pill badge-success px-2 py-1"
+                    style={{ fontSize: '16px', letterSpacing: '1px' }}
+                  >
+                    {solvedQuestions}
+                  </span>
                 </div>
                 <div className="col-md col-auto">
-                  <b> Mark Reviewed : </b>
-                  <span className="text-primary">{reviewedQuestions}</span>
+                  <p className="h5"> Mark Reviewed</p>
+                  <span
+                    className="badge badge-pill badge-info px-2 py-1"
+                    style={{ fontSize: '16px', letterSpacing: '1px' }}
+                  >
+                    {reviewedQuestions}
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="col-md-12 px-1 order-2">
-            <div className="alert alert-warning py-1" style={{ fontSize: '0.9rem' }}>
-              <li>User Data will be saved in your localStorage.</li>
-              <li>To undo any done or reviewd question click on 'Completed' or 'Reviewed'.</li>
-            </div>
+          <div className="col-md-12 px-1 order-2 mb-2">
+            <ul className="list-group list-group-flush" style={{ fontSize: '12px' }}>
+              <li className="list-group-item list-group-item-primary">
+                User Data will be saved in your
+                <b className="ml-1">localStorage</b>
+              </li>
+              <li className="list-group-item list-group-item-primary">
+                To undo any done or reviewed question click on
+                <span className="ml-1 mr-1 badge badge-secondary">Completed</span>
+                or
+                <span className="ml-1 badge badge-secondary">Reviewed</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

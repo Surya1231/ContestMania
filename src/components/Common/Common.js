@@ -4,25 +4,8 @@ import React from 'react';
 export const LoadingFadeIn = () => {
   return (
     <div className="text-center loader">
-      <div>
-        <div className="spinner-grow text-primary" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <div className="spinner-grow text-secondary" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <div className="spinner-grow text-success" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <div className="spinner-grow text-danger" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <div className="spinner-grow text-warning" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-        <div className="spinner-grow text-info" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
+      <div className="spinner-border text-primary" role="status">
+        <span className="sr-only">Loading...</span>
       </div>
     </div>
   );
@@ -56,13 +39,14 @@ export const TooltipBox = ({ title = 'i', message }) => {
 export const SearchInput = ({ handleChange, search }) => {
   return (
     <div className="form-group">
-      <label> Search </label>
+      <label htmlFor="SearchInput"> Search </label>
       <input
+        id="SearchInput"
         className="form-control form-control-sm search-input"
         type="text"
         name="search"
         value={search}
-        placeholder="Search anything here"
+        placeholder="eg: Contest Name"
         onChange={handleChange}
       />
       {search && (
