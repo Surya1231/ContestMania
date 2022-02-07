@@ -1,5 +1,5 @@
 import { globalSolutions } from '../../api/data/cfProblemsSolutions';
-import { problemsCategories } from '../../api/data/ProblemsData';
+import { problemsCategories } from '../../api/data/problemsData';
 
 const LOCAL_PROBLEMS_FILTERS = 'LOCAL_PROBLEMS_FILTERS';
 const LOCAL_PROBLEMS = 'LOCAL_PROBLEMS';
