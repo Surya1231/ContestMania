@@ -17,8 +17,11 @@ export async function getCfContest() {
       });
   });
 }
-
+const sleep = (milliseconds) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
 export async function getCfUserInfo(username) {
+  await sleep(300);
   const url = `https://codeforces.com/api/user.status?handle=${username}`;
   return new Promise((resolve, reject) => {
     Axios.get(url)
