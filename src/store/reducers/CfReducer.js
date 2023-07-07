@@ -23,6 +23,7 @@ export const UpdateCfContestAction = (contestList) => {
 const categories = {
   All: { name: 'All', value: 'All', search: '' },
   Div3: { name: 'Div 3', value: 'Div3', search: '(Div. 3)' },
+  Div4: { name: 'Div 4', value: 'Div4', search: '(Div. 4)' },
   Educational: { name: 'Educational', value: 'Educational', search: 'Educational' },
   Div2: { name: 'Div 2', value: 'Div2', search: '(Div. 2' },
   Div1: { name: 'Div 1', value: 'Div1', search: 'Div. 1' },
